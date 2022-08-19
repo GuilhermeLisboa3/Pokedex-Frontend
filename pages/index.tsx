@@ -1,11 +1,24 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import HeaderNoAuth from '../src/components/common/headerAuth'
+import type { NextPage } from "next";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import HeaderAuth from "../src/components/common/headerAuth";
+import HeaderNoAuth from "../src/components/common/headerNoAuth";
+import FilterPokemon from "../src/components/filterPokemon";
 
 const Home: NextPage = () => {
+  const [token, setToken] = useState(false)
+
+    useEffect(()=>{
+      if(sessionStorage.getItem("pokemon-token")){
+        setToken(true)
+      }else{
+        setToken(false)
+      }
+    },[])
+
   return (
     <>
-    <Head>
+      <Head>
         <title>Pokemon</title>
         <link
           rel="shortcut icon"
@@ -13,16 +26,14 @@ const Home: NextPage = () => {
           type="image/x-icon"
         />
         <meta property="og:title" content="Pokemon" key="title" />
-        <meta
-          name="description"
-          content="Tenha acesso aos pokemons"
-        />
+        <meta name="description" content="Tenha acesso aos pokemons" />
       </Head>
-      <div>
-        <HeaderNoAuth/>
+      <div>  
+        {token ?  <HeaderAuth/> : <HeaderNoAuth/>}
+        <FilterPokemon/>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
