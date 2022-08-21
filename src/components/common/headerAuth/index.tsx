@@ -1,12 +1,13 @@
 import styles from "./styles.module.scss";
 import { FaUserAlt } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { TbPokeball } from "react-icons/tb";
 import { Container } from "reactstrap";
 import Link from "next/link";
 import Modal from "react-modal";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import SearchPokemon from "../searchPokemon";
+import ApiPokemon from "../../../services/apiPokemon";
 
 Modal.setAppElement("#__next")
 
@@ -25,16 +26,7 @@ const HeaderAuth = () => {
   };
   return (
     <Container className={styles.header}>
-      <div className={styles.search}>
-        <input
-          className={styles.input}
-          type="search"
-          placeholder="Search your Pokemon"
-        />
-        <button className={styles.btn} type="button">
-          <TbPokeball className={styles.iconPokemon} />
-        </button>
-      </div>
+      <SearchPokemon/>
       <div className={styles.icons}>
         <button className={styles.iconNavegate} onClick={handleOpenModal}>
           <FaUserAlt className={styles.icon} />

@@ -1,18 +1,26 @@
+export type PokemonType = {
+  id: number;
+  name: string;
+  photoUrl: string;
+  type: string[];
+};
 
-const Pokemon ={
-    showPokemons: async ()=>{
-        const UrlPokemons = (id:number) => `https://pokeapi.co/api/v2/pokemon/${id}`
-
-        const allPokemon = []
-
-        for(let p = 0 ; p <= 905 ; p++){
-            const response = await fetch(UrlPokemons(p))
-            const data = await response.json()
-            allPokemon.push(UrlPokemons(data))
-        }
-
-        return allPokemon
+const ApiPokemon = {
+  searchPokemon: async (idPokemon: string | number) => {
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${idPokemon}/`
+      );
+      const dataPokemon = await response.json();
+      return dataPokemon;
+    } catch (error) {
+      console.log(error);
     }
-} 
+  },
+  dataPokemon: async (pokemon:PokemonType)=>{
+    const dataPokemon = await pokemon
+    return dataPokemon
+  }
+};
 
-export default Pokemon
+export default ApiPokemon;

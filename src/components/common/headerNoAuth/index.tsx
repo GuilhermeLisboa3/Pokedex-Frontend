@@ -1,21 +1,21 @@
 import styles from "./styles.module.scss";
-import { TbPokeball } from "react-icons/tb";
 import { Container } from "reactstrap";
 import Link from "next/link";
+import SearchPokemon from "../searchPokemon";
+import ApiPokemon, { PokemonType } from "../../../services/apiPokemon";
 
-const HeaderNoAuth = () => {
+interface props{
+  onSearch: (pokemon: string | number)=>{}
+}
+
+const HeaderNoAuth = ({onSearch}:props) => {
+  const onSearchHandler = async(pokemon: string | number)=>{
+      onSearch(pokemon)
+}
+  
   return (
     <Container className={styles.header}>
-      <div className={styles.search}>
-        <input
-          className={styles.input}
-          type="search"
-          placeholder="Search your Pokemon"
-        />
-        <button className={styles.btn} type="button">
-          <TbPokeball className={styles.iconPokemon} />
-        </button>
-      </div>
+      <SearchPokemon onSearch={onSearchHandler}/>
       <div className={styles.register}>
         <Link href="/login">
           <button type="button" className={styles.itensNav}>
