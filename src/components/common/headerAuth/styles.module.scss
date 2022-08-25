@@ -1,84 +1,89 @@
 @import "../../../../styles/colors.module.scss";
 
-.header{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+.header {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
-.icons{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 25px;
+.icons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 25px;
 }
-.iconNavegate{
-    border: none;
-    background-color:  #ffffff;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 5px 5px 10px rgb(217 219 223 / 65%);
-    &:hover{
-        background-color: transparent;
-        border:2px solid $color-third;
-        color: $color-third;
-    }
-}
-
-.icon{
+.iconNavegate {
+  border: none;
+  background-color: #ffffff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgb(217 219 223 / 65%);
+  &:hover {
     background-color: transparent;
-    font-size: 1.5rem;
+    border: 2px solid $color-third;
+    color: $color-third;
+  }
 }
 
+.icon {
+  background-color: transparent;
+  font-size: 1.5rem;
+}
 
 .modal {
-    position: absolute;
-    width: 150px;
-    height: 80px;
-    top: 85px;
-    right: 10%;
-    background-color: #ffffff;
-    outline: none;
-    border-radius: 5px;
-    box-shadow: 8px 6px 4px rgb(217 219 223 / 65%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0px 24px;
-  }
-  .overlayModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: transparent;
-  }
-  
-  .modalLink {
-    color: black;
-    margin: 5px 0px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.4s;
-    background: transparent;
-    &:hover{
-      color:$color-third;
-    }
-  }
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  top: 85px;
+  right: 10%;
+  background-color: #ffffff;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 8px 6px 4px rgb(217 219 223 / 65%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 24px;
+}
+.overlayModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
 
-@media(max-width:395px){
-    .header{
-        flex-direction: column-reverse;
-        gap: 30px;
-    }
-    .search{
-        width: 100%;
-    }
+.modalLink {
+  color: black;
+  margin: 5px 0px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+  background: transparent;
+  &:hover {
+    color: $color-third;
+  }
+}
+
+@media (max-width: 958px) {
+  .header {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .search {
+    width: 100%;
+  }
+  .modal {
+    top: 5px;
+    left: 5px;
+  }
+}
+@media (max-width: 442px) {
+   
 }

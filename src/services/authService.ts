@@ -1,5 +1,4 @@
 import api from './api'
-import {setCookie} from 'nookies'
 
 interface RegisterParams {
     name: string;
@@ -30,10 +29,7 @@ const authService = {
                 return error
             })
             if(res.status === 200){
-                sessionStorage.setItem('pokemon,token', res.data.token)
-                // setCookie(null, 'pokemon-token',res.data.token,{
-                //     maxAge: 86400
-                // })
+                sessionStorage.setItem('pokemon-token', res.data.token)
             }
             return res
     },

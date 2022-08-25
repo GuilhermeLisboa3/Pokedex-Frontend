@@ -10,8 +10,11 @@ import SearchPokemon from "../searchPokemon";
 import ApiPokemon from "../../../services/apiPokemon";
 
 Modal.setAppElement("#__next")
+interface props{
+  onSearch: (pokemon: string | number)=>{},
+}
 
-const HeaderAuth = () => {
+const HeaderAuth = ({onSearch}:props) => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
   const handleOpenModal = () => {
@@ -21,19 +24,25 @@ const HeaderAuth = () => {
     setModalOpen(false);
   };
   const handleLogout = () => {
-    sessionStorage.clear();
-    router.push("/");
+    sessionStorage.clear()
+    location.reload()
   };
+  const onSearchHandler = async(pokemon: string | number)=>{
+    if(pokemon === ''){
+    }else{
+      onSearch(pokemon)
+    }
+}
   return (
     <Container className={styles.header}>
-      <SearchPokemon/>
+      <SearchPokemon onSearch={onSearch}/>
       <div className={styles.icons}>
         <button className={styles.iconNavegate} onClick={handleOpenModal}>
           <FaUserAlt className={styles.icon} />
         </button>
 
         <button className={styles.iconNavegate}>
-          <Link href="/pokemons">
+          <Link href="/favorites">
             <FaHeart className={styles.icon} />
           </Link>
         </button>

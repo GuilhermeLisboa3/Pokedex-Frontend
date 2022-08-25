@@ -1,0 +1,30 @@
+@import "../../../../styles/colors.module.scss";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 6px;
+}
+.pages {
+  background-color: transparent;
+}
+
+.btnPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 100%;
+  background-color: $color-third;
+  border: none;
+  box-shadow: 3px 4px 13px #fd4f55be;
+}
+.iconArrow {
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+}

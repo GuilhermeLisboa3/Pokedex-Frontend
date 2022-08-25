@@ -1,0 +1,21 @@
+@import "../../../styles/colors.module.scss";
+
+
+.pokedexContainer{
+    margin-top: 5rem;
+}
+.pokedexHeader{
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-size: 3rem;       
+        color: $color-third;
+    }
+}
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}

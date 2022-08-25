@@ -8,6 +8,9 @@ export type PokemonType = {
 const ApiPokemon = {
   searchPokemon: async (idPokemon: string | number) => {
     try {
+      if (idPokemon === "") {
+        return;
+      }
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${idPokemon}/`
       );
@@ -17,9 +20,25 @@ const ApiPokemon = {
       console.log(error);
     }
   },
-  dataPokemon: async (pokemon:PokemonType)=>{
-    const dataPokemon = await pokemon
-    return dataPokemon
+  getPokemons: async (limit: number = 50, offset: number = 0) => {
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
+      );
+      const dataPokemon = await response.json();
+      return dataPokemon;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getPokemonsData: async (urlPokemon: string) => {
+    try {
+      const response = await fetch(`${urlPokemon}`);
+      const dataPokemon = await response.json();
+      return dataPokemon;
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 

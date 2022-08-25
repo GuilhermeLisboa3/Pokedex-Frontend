@@ -4,8 +4,7 @@ import { FaRegHeart } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import stylesCardPokemon from "../../../styles/cardPokemon.module.scss"
 
-interface props {
-  Pokemon: {
+export type PokedexPokemon = {
     id: string;
     name: string;
     sprites: { front_default: string };
@@ -16,7 +15,9 @@ interface props {
         };
       }
     ];
-  };
+}
+interface props {
+  Pokemon: PokedexPokemon
 }
 const CardPokemon = ({ Pokemon }: props) => {
   const typePokemon = Pokemon.types.map((type) => type.type.name);

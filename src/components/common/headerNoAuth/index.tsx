@@ -22,7 +22,7 @@ const HeaderNoAuth = ({onSearch}:props) => {
             Login
           </button>
         </Link>
-        <Link href="/login">
+        <Link href="/register">
           <button type="button" className={styles.itensNav}>
             Register
           </button>

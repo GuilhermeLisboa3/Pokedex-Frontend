@@ -1,0 +1,125 @@
+@import "./colors.module.scss";
+
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 600px;
+    padding: 50px;
+    margin:0 auto;
+    border-radius: 6px;
+    box-shadow:$box-shadow 0px 12px 28px 0px, $box-shadow 0px 2px 4px 0px, $box-shadow 0px 0px 0px 1px inset;
+}
+.imagens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.imgLogo{
+    width: 150px;
+    cursor: pointer;
+}
+.imgPokemon{
+    width: 150px;
+}
+
+.formGroup{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 3px;
+    border-radius: 5px;
+    position: relative;
+    height: 35px;
+}
+.label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: $color-third;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 40px;
+    border-radius: 5px 0px 0px 5px;
+}
+.inputName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 40px;
+    width: 91.8%;
+    border-radius: 0px 5px 5px 0px;
+    &::placeholder{
+        color: $color-secondary;
+    }
+    &:focus{
+        background-color: transparent;
+        border-color: $color-third;
+        color: black;
+        box-shadow: none;
+    }
+}
+
+.icon{
+    background-color: transparent;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.btn{
+    display: block;
+    background: $color-third;
+    border-radius: 999px;
+    box-shadow: $color-third 0 10px 20px -10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border: none;
+    margin: 30px auto 0px auto;
+    &:hover{
+        background-color: transparent;
+        color: $color-third;
+        border: 1px solid $color-third;
+    }
+}
+
+
+@media (max-width: 767px){
+    .form{
+        width:95%;
+    }
+}
+@media (max-width: 518px){
+    .imgLogo{
+        width: 120px;
+        cursor: pointer;
+    }
+    .imgPokemon{
+        width: 120px;
+    }
+}
+@media (max-width: 426px){
+    .imagens{
+        flex-direction: column-reverse;
+    }
+    .imgLogo{
+        width: 140px;
+        cursor: pointer;
+    }
+    .imgPokemon:nth-child(1){
+        display: none;
+    }
+}

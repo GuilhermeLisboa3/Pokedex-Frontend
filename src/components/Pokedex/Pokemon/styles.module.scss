@@ -1,11 +1,11 @@
-@import '../../../styles/colors.module.scss';
+@import '../../../../styles/colors.module.scss';
 
 .cardPokemon{
     position: relative;
     margin: 0;
     margin-top: 7rem;
     width: 280px;
-    height: 170px;
+    height: 190px;
     background-color: #ffffff ;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
     background-color: transparent;
     font-weight: bold;
     color: $color-idPokemon;
-    padding-top: 3rem;
+    padding-top: 4.1rem;
 }
 .namePokemon{
     background-color: transparent;
@@ -70,4 +70,3 @@
         margin-top: 5rem;
     }
 }
-

@@ -1,22 +1,26 @@
 import styles from "./styles.module.scss";
 import { TbPokeball } from "react-icons/tb";
-import { useState } from "react";
-import ApiPokemon from "../../../services/apiPokemon";
+import { useEffect, useState } from "react";
 
 interface props{
-  onSearch: (pokemon: string | number)=> void
+  onSearch: (pokemon: string | number)=> void,
+
 }
 
 const SearchPokemon = ({onSearch}:props) => {
   const [search, setSearch] = useState('')
+  useEffect(()=>{
+    if(search === ''){
+    }
+  },[search])
   const onChangeHandler = (e:any) =>{
-    setSearch(e.target.value);
+      setSearch(e.target.value);
   }
   const onButtonClickHandler = async (e:any)=>{
     onSearchHandler()
   }
   const onSearchHandler = async()=>{
-    onSearch(search)
+      onSearch(search)
   }
   return (
     <>
