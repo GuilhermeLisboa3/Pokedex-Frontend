@@ -33,5 +33,15 @@ const authService = {
             }
             return res
     },
+    delete: async()=>{
+        const res = await api.delete('/user')
+        .catch(error =>{
+            if(error.response.status === 400){
+                return error.response
+            }
+            return error
+        })
+        return res
+    }
 }
 export default authService

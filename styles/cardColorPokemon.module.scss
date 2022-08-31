@@ -1,0 +1,163 @@
+@import './colors.module.scss';
+.electric{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $pokemon-color-electric;
+    background-color:$pokemon-electric;
+}
+.grass{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $pokemon-color-grass;
+    background-color:$pokemon-grass;
+}
+.poison{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $pokemon-color-poison;
+    background-color:$pokemon-poison;
+}
+.fire{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $pokemon-color-fire;
+    background-color:$pokemon-fire;
+}
+.flying{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    background:linear-gradient(to bottom, $pokemon-ice 50%, $pokemon-steel 50%);
+}
+.water{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-water;
+    background-color:$pokemon-water;
+}
+.bug{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-bug;
+    background-color:$pokemon-bug;
+}
+.ghost{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-ghost;
+    background-color:$pokemon-ghost;
+}
+.fairy{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-fairy;
+    background-color:$pokemon-fairy;
+}
+.psychic{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-psychic;
+    background-color:$pokemon-psychic;
+}
+.fighting{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-fighting;
+    background-color:$pokemon-fighting;
+}
+.steel{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-steel;
+    background-color:$pokemon-steel;
+}
+.normal{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-normal;
+    background-color:$pokemon-normal;
+}
+.ice{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-ice;
+    background-color:$pokemon-ice;
+}
+.dragon{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:black;
+    background:linear-gradient(to bottom, $pokemon-ice 50%, $pokemon-fighting 50%);
+}
+.ground{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-ground;
+    background-color:$pokemon-ground;
+}
+.rock{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-rock;
+    background-color:$pokemon-rock;
+}
+.dark{
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color:$pokemon-color-dark;
+    background-color:$pokemon-dark;
+}

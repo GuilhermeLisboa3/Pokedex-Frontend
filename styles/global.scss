@@ -19,3 +19,14 @@
   color: white;
   font-weight: bold;
 }
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-track{
+  background: $color-primary;
+}
+::-webkit-scrollbar-thumb{
+  background: $color-third;
+  border-radius: 40px;
+}

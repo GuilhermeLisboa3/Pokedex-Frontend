@@ -1,0 +1,38 @@
+@import "./colors.module.scss";
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:2rem ;
+    cursor: pointer;
+}
+.imgLogo{
+    width: 200px;
+}
+.listPokemons{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.noPokemon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8rem;
+    height: 90vh;
+}
+.favoriteRed{
+    background-color: transparent;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    color: $color-third;
+    transition: 0.5s;
+    &:hover{
+       transform: scale(1.1);
+    }
+}

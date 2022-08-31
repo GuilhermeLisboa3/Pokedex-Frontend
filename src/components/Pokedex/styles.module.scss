@@ -19,3 +19,11 @@
     align-items: center;
     gap: 20px;
 }
+
+@media (max-width:350px) {
+    .pokedexHeader{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

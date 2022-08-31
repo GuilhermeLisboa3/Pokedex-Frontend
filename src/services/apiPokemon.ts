@@ -8,7 +8,7 @@ export type PokemonType = {
 const ApiPokemon = {
   searchPokemon: async (idPokemon: string | number) => {
     try {
-      if (idPokemon === "") {
+      if (idPokemon === "" || idPokemon === 0) {
         return;
       }
       const response = await fetch(
@@ -34,6 +34,15 @@ const ApiPokemon = {
   getPokemonsData: async (urlPokemon: string) => {
     try {
       const response = await fetch(`${urlPokemon}`);
+      const dataPokemon = await response.json();
+      return dataPokemon;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  SpeciesPokemonData: async(url:string)=>{
+    try {
+      const response = await fetch(`${url}`);
       const dataPokemon = await response.json();
       return dataPokemon;
     } catch (error) {

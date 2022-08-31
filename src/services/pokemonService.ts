@@ -1,15 +1,15 @@
 import api from "./api";
 
-export interface Pokemon {
+export interface PokemonParams {
   idPokemon: number;
   namePokemon: string;
-  photoUrl: string;
-  typePokemon: string[];
+  photoPokemon:string;
+  types:string[]
+  urlSpecies:string
 }
 const PokemonService = {
-  addFavoritePokemon: async (params: Pokemon) => {
+  addFavoritePokemon: async (params: PokemonParams) => {
     const token = sessionStorage.getItem('pokemon-token')
-    console.log(token)
     const result = await api.post('/pokemon',params)
         .catch(error =>{
             if(error.response.status === 400){
@@ -20,7 +20,7 @@ const PokemonService = {
         return result
   },
   getAddPokemon: async()=>{
-    const result = await api.get('/pokemon')
+    const result = await api.get('/pokemons')
         .catch(error =>{
             if(error.response.status === 400){
                 return error.response
@@ -29,7 +29,7 @@ const PokemonService = {
         })
         return result
   },
-  removePokemon: async(id:number)=>{
+  removePokemon: async(id:string | number)=>{
     const result = await api.delete(`/pokemon/${id}`)
         .catch(error =>{
             if(error.response.status === 400){

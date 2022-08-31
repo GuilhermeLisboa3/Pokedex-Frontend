@@ -29,7 +29,7 @@ const Login = function () {
       setTimeout(() => {
         setToastIsOpen(false);
       }, 1000 * 3);
-      setToastMessage("Cadastro feito com sucesso!");
+      setToastMessage("Registration successful!");
     }
   }, [router.query]);
 
@@ -51,7 +51,7 @@ const Login = function () {
       setTimeout(() => {
         setToastIsOpen(false);
       }, 1000 * 3);
-      setToastMessage("Email ou senha incorretos!");
+      setToastMessage("Incorrect email or password!");
     }
   };
 

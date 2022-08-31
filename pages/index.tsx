@@ -1,19 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import CardPokemon, { PokedexPokemon } from "../src/components/cardPokemon";
+import Footer from "../src/components/common/footer";
 import HeaderAuth from "../src/components/common/headerAuth";
 import HeaderNoAuth from "../src/components/common/headerNoAuth";
 import Pokedex, { pokemonPokedex } from "../src/components/Pokedex";
 import ApiPokemon from "../src/services/apiPokemon";
+import { TypePokemon } from "../src/services/typePokemon";
 
 const Home: NextPage = () => {
   const [token, setToken] = useState(false);
-  const [pokemon, setPokemon] = useState<PokedexPokemon>();
-  const [pokemonPokedex, setPokemonPokedex] = useState<PokedexPokemon[]>([]);
+  const [pokemon, setPokemon] = useState<TypePokemon>();
+  const [pokemonPokedex, setPokemonPokedex] = useState<TypePokemon[]>([]);
   const [page, setPage] = useState(0);
   const [allPages, setAllPages] = useState(0);
-  const itensPerPage =25
+  const itensPerPage = 25;
 
   useEffect(() => {
     fecthPokedex();
@@ -24,6 +25,9 @@ const Home: NextPage = () => {
     }
   }, [page]);
 
+  useEffect(()=>{
+    onSearchHandler
+  },[pokemon])
   const onSearchHandler = async (pokemon: string | number) => {
     if (typeof pokemon === "string") {
       const result = await ApiPokemon.searchPokemon(pokemon.toLowerCase());
@@ -36,8 +40,11 @@ const Home: NextPage = () => {
 
   const fecthPokedex = async () => {
     try {
-      const data = await ApiPokemon.getPokemons(itensPerPage, itensPerPage * page);
-      setAllPages(Math.ceil(data.count / itensPerPage))
+      const data = await ApiPokemon.getPokemons(
+        itensPerPage,
+        itensPerPage * page
+      );
+      setAllPages(Math.ceil(data.count / itensPerPage));
       const promises = data.results.map(async (pokemon: pokemonPokedex) => {
         return await ApiPokemon.getPokemonsData(pokemon.url);
       });
@@ -47,6 +54,7 @@ const Home: NextPage = () => {
       console.log("fecthPokedex: ", error);
     }
   };
+
   return (
     <>
       <Head>
@@ -66,14 +74,16 @@ const Home: NextPage = () => {
           <HeaderNoAuth onSearch={onSearchHandler} />
         )}
       </div>
-      {pokemon ? <CardPokemon Pokemon={pokemon} /> : ""}
-      <div>
-        <Pokedex 
-        pokemonsPokedex={pokemonPokedex} 
-        page={page} 
-        allPages={allPages} 
-        setPages={setPage}/>
+      <div className="mb-5">
+        <Pokedex
+          pokemon={pokemon ? pokemon : null}
+          pokemonsPokedex={pokemonPokedex}
+          page={page}
+          allPages={allPages}
+          setPages={setPage}
+        />
       </div>
+      <Footer/>
     </>
   );
 };

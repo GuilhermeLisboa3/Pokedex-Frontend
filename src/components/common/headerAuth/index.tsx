@@ -7,7 +7,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import SearchPokemon from "../searchPokemon";
-import ApiPokemon from "../../../services/apiPokemon";
+import authService from "../../../services/authService";
 
 Modal.setAppElement("#__next")
 interface props{
@@ -33,6 +33,17 @@ const HeaderAuth = ({onSearch}:props) => {
       onSearch(pokemon)
     }
 }
+
+  const deleteAccount = async()=>{
+    const confirmDelete = confirm("Are you sure you want to delete your account?")
+    if(confirmDelete){
+      const result = await authService.delete()
+      sessionStorage.clear()
+      location.reload()
+    }else{
+      return
+    }
+  }
   return (
     <Container className={styles.header}>
       <SearchPokemon onSearch={onSearch}/>
@@ -54,11 +65,11 @@ const HeaderAuth = ({onSearch}:props) => {
         className={styles.modal}
         overlayClassName={styles.overlayModal}
       >
-        <Link href="/user">
-          <p className={styles.modalLink}>Meus Dados</p>
+        <Link href="/">
+          <p className={styles.modalLink} onClick={deleteAccount}>Delete account</p >
         </Link>
         <p className={styles.modalLink} onClick={handleLogout}>
-          Sair
+          Exit
         </p>
       </Modal>
     </Container>

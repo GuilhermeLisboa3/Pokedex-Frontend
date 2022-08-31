@@ -39,7 +39,7 @@ const Register = () => {
       setTimeout(() => {
         setToastIsOpen(false);
       }, 1000 * 3);
-      setToastMessage("Senha e confirmação diferentes");
+      setToastMessage("Different password and confirmation");
       return;
     }
     const { data, status } = await authService.register(params);

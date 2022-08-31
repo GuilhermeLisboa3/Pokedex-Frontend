@@ -37,7 +37,7 @@
 
 .modal {
   position: absolute;
-  width: 150px;
+  width: 160px;
   height: 80px;
   top: 85px;
   right: 10%;
@@ -80,8 +80,8 @@
     width: 100%;
   }
   .modal {
-    top: 5px;
-    left: 5px;
+    top: 10%;
+    right: 10%;
   }
 }
 @media (max-width: 442px) {

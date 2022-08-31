@@ -1,0 +1,131 @@
+@import "./colors.module.scss";
+
+.verifyAbilitym {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  align-items: center;
+  background-color: $color-primary;
+  width: 200px;
+  height: 42px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 7px 6px 10px $box-shadow;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.electric {
+  @extend .verifyAbilitym;
+  border: 2px solid $pokemon-electric;
+  color: $pokemon-color-electric;
+}
+
+.grass {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-grass;
+  border: 2px solid$pokemon-grass;
+}
+.poison {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-poison;
+  border: 2px solid$pokemon-poison;
+}
+.fire {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-fire;
+  border: 2px solid$pokemon-fire;
+}
+.flying {
+  @extend .verifyAbilitym;
+  color: black;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    background: linear-gradient(to bottom, $pokemon-ice 50%, $pokemon-steel 50%);
+    z-index: -1;
+    margin: -3px;
+    border-radius: 40px;
+  }
+}
+.water {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-water;
+  border: 2px solid$pokemon-water;
+}
+.bug {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-bug;
+  border: 2px solid$pokemon-bug;
+}
+.ghost {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-ghost;
+  border: 2px solid$pokemon-ghost;
+}
+.fairy {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-fairy;
+  border: 2px solid$pokemon-fairy;
+}
+.psychic {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-psychic;
+  border: 2px solid$pokemon-psychic;
+}
+.fighting {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-fighting;
+  border: 2px solid$pokemon-fighting;
+}
+.steel {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-steel;
+  border: 2px solid$pokemon-steel;
+}
+.normal {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-normal;
+  border: 2px solid$pokemon-normal;
+}
+.ice {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-ice;
+  border: 2px solid$pokemon-ice;
+}
+.dragon {
+  @extend .verifyAbilitym;
+  color: black;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    background: linear-gradient(
+    to bottom,
+    $pokemon-ice 50%,
+    $pokemon-fighting 50%
+  );
+    z-index: -1;
+    margin: -3px;
+    border-radius: 40px;
+  }
+}
+.ground {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-ground;
+  border: 2px solid$pokemon-ground;
+}
+.rock {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-rock;
+  border: 2px solid$pokemon-rock;
+}
+.dark {
+  @extend .verifyAbilitym;
+  color: $pokemon-color-dark;
+  border: 2px solid$pokemon-dark;
+}
